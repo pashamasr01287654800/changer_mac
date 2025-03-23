@@ -73,13 +73,4 @@ done
 echo -e "${BLUE}Enabling the network interface $interface...${RESET}"
 ifconfig "$interface" up
 
-# Restart the network manager service
-if command -v systemctl &> /dev/null; then
-    echo -e "${BLUE}Restarting NetworkManager service...${RESET}"
-    systemctl restart NetworkManager
-else
-    echo -e "${BLUE}Restarting network-manager service...${RESET}"
-    service network-manager restart
-fi
-
 echo -e "${GREEN}MAC address changed successfully for $interface!${RESET}"
